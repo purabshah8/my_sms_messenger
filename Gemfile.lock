@@ -296,6 +296,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  dotenv
   kamal
   mongoid
   puma (>= 5.0)
