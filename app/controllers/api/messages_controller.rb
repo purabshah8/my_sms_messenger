@@ -20,7 +20,7 @@ class Api::MessagesController < ApplicationController
       @message.sent_at = Time.now
 
       if @message.save
-        render json: @message, status: :created, location: @message
+        render json: @message, status: :created
       else
         render json: @message.errors, status: :unprocessable_entity
       end
