@@ -25,3 +25,5 @@ ng serve --proxy-config proxy.conf.json
 
 ```
 You can then access the project on localhost:4200.
+
+The messenger can only send messages to +1 877-780-4236.
