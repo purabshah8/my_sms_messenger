@@ -1,0 +1,15 @@
+<div class="messenger-container">
+  <header class="messenger-header">
+    <h1>MY SMS MESSENGER</h1>
+  </header>
+
+  <main class="messenger-content">
+    <app-message-form [userId]="userId" />
+    <app-message-list [userId]="userId" />
+
+  </main>
+  <div class="page-actions">
+    <button class="btn-logout" (click)="onLogout()" >Logout</button>
+  </div>
+</div>
+

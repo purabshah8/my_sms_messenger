@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from '../../services/message.service';
 import { Message } from '../../models/message.model';
@@ -12,6 +12,7 @@ import { Message } from '../../models/message.model';
 
 // form component to create and submit a message
 export class MessageFormComponent {
+  @Input({ required: true }) userId!: string;
   messageForm: FormGroup;
   charCount = 0;
   maxChars = 250;

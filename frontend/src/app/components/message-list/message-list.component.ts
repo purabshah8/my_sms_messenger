@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { PhonePipe } from '../../pipes/phone.pipe';
 import { MessageService } from '../../services/message.service';
@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 
 // component to list all messages
 export class MessageListComponent implements OnInit, OnDestroy {
+  @Input() userId!: string;
   messages: Message[] = [];
   maxChars = 250;
   subscription: Subscription = new Subscription();

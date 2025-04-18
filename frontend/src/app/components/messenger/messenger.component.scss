@@ -1,0 +1,45 @@
+.messenger-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.messenger-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.messenger-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.messenger-content {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .messenger-content {
+    flex-direction: column;
+  }
+}
+
+app-message-form, app-message-list {
+  flex: 1;
+}
+
+.btn-logout {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.page-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
