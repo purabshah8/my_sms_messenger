@@ -1,14 +1,15 @@
 class Api::MessagesController < ApplicationController
   before_action :start_twilio_client, only: :create
+  before_action :require_authentication
 
   def index
-    @messages = Message.all.order(sent_at: :desc)
+    @messages = Current.user.messages.order(sent_at: :desc)
 
     render json: @messages
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = Current.user.messages.new(message_params)
     @message.from ||= ENV['TWILIO_PHONE_NUMBER']
 
     begin
