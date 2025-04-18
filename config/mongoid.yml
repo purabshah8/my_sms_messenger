@@ -4,7 +4,7 @@ development:
     # Defines the default client. (required)
     default:
       # Mongoid can connect to a URI accepted by the driver:
-      uri: mongodb+srv://Cluster33754:ZGJIR11SXVdw@cluster33754.ayjfki1.mongodb.net/mysms_messenger
+      uri: <%= ENV['MONGO_URI'] %>
 
       # Otherwise define the parameters separately.
       # This defines the name of the default database that Mongoid can connect to.
@@ -297,3 +297,8 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGO_URI'] %>
