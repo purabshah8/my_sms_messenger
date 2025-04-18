@@ -31,6 +31,6 @@ class Session
   end
 
   def set_expiration
-    self.expires_at = 3.hours.from.now
+    self.expires_at = 3.hours.from_now
   end
 end

@@ -7,4 +7,10 @@ class ApplicationController < ActionController::API
       ENV['TWILIO_AUTH_TOKEN']
     )
   end
+
+  def set_current_user
+    return unless authenticated?
+
+    @current_user = Current.session.user
+  end
 end

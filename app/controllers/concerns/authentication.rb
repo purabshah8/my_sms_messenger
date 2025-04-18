@@ -3,7 +3,6 @@ module Authentication
 
   included do
     before_action :require_authentication
-    after_action :refresh_session
   end
 
   class_methods do
@@ -14,6 +13,10 @@ module Authentication
 
   private
 
+  def authenticated?
+    resume_session
+  end
+
   def require_authentication
     resume_session || render_unauthorized
   end
@@ -21,13 +24,6 @@ module Authentication
   def resume_session
     token = request.headers['Authorization']&.split(' ')&.last
     Current.session = Session.active.find_by(token: token)
-  end
-
-  def refresh_session
-    if Current.session
-      Current.session.regenerate_token!
-      response.set_header('Authorization', "Bearer #{Current.session.token}")
-    end
   end
 
   def render_unauthorized
