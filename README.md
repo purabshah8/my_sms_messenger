@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample SMS messaging application built using an Angular frontend, Ruby on Rails backend, with database storage using MongoDB.
 
-Things you may want to cover:
+To build this project locally, first download the repository. Then youu must build the angular components then run the rails server.
 
-* Ruby version
+Navigate to the project directory, then run the following commands:
 
-* System dependencies
+```bash
+cd frontend
+ng build --configuration production
+cd ..
+bundle exec rails s
+```
 
-* Configuration
+The project will now be acccessible on localhost:3000.
 
-* Database creation
+You will need your own local MongoDM or an atlas instance for your database. If you have a connection URI, you can save it as the environment variable `MONGO_URI`
 
-* Database initialization
+For local development you can run both a rails server and an angular server with a proxy for api requests. The angular server can be run with the following command:
 
-* How to run the test suite
+```bash
+cd frontend
+ng serve --proxy-config proxy.conf.json
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+You can then access the project on localhost:4200.
