@@ -10,5 +10,5 @@ class Message
     with: /\A\+\d{1,3}\d{10}\z/,
     message: "invalid format, ensure phone number has country code and no spaces or dashes"
   }
-  validates :body, presence: true
+  validates :body, presence: true, length: { maximum: 250 }
 end
