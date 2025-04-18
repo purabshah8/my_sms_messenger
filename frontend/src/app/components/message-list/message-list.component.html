@@ -1,0 +1,28 @@
+<div class="history-container">
+  <h2>Message History ({{ messages.length }})</h2>
+
+  <div class="message-list">
+    @for (message of messages; track message._id) {
+      <div class="message-item">
+        <div class="message-header">
+          <span class="phone-number">{{ message.to | phone }}</span>
+          <span class="timestamp">{{ message.sent_at || message.created_at | date: "EEEE, dd-MMMM-yy HH:mm:ss 'UTC'" }}</span>
+        </div>
+
+        <div class="message-body">
+          {{ message.body }}
+        </div>
+
+        <div class="message-footer">
+          <span class="char-count">{{ getCharCount(message.body) }}/{{ maxChars }}</span>
+        </div>
+      </div>
+    }
+
+    @if (messages.length === 0) {
+      <div class="no-messages">
+        No messages found
+      </div>
+    }
+  </div>
+</div>
