@@ -1,4 +1,4 @@
-# README
+# MY SMS MESSENGER
 
 This is a sample SMS messaging application built using an Angular frontend, Ruby on Rails backend, with database storage using MongoDB.
 
